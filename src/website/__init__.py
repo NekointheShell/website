@@ -1,8 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import pkgutil, yaml, markdown
 
 
 app = Flask(__name__)
+
+
+@app.before_request
+def log():
+    app.logger.info(request)
 
 
 @app.route('/favicon.ico')

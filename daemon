@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
 
+
+rsyslogd
 nginx -g 'daemon on; master_process on;'
-gunicorn --bind 127.0.0.1:5000 website:app
+gunicorn --bind 127.0.0.1:5000 website:app &
+
+
+tail -f /var/log/nginx/access.log &
+tail -f /var/log/nginx/error.log
