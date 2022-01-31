@@ -5,11 +5,6 @@ import pkgutil, yaml, markdown
 app = Flask(__name__)
 
 
-@app.before_request
-def log():
-    app.logger.info(request)
-
-
 @app.route('/favicon.ico')
 def favicon():
     return app.send_static_file('images/terminal.svg')
@@ -67,6 +62,6 @@ def posts(page):
     abort(404)
 
 
-@app.route('/posts/images/<image>')
-def posts_images(image):
-    return send_from_directory('posts/images', image, conditional = True)
+@app.route('/posts/images/<path:filename>')
+def posts_images(filename):
+    return send_from_directory('posts/images', filename)
