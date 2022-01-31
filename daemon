@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-nginx -g 'daemon on; master_process on'
+nginx -g 'daemon on; master_process on;'
 gunicorn --bind 127.0.0.1:5000 website:app
