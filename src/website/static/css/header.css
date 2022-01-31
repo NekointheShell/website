@@ -1,0 +1,26 @@
+#header {
+    grid-area: header;
+    align-self: center;
+    justify-self: center;
+
+    border-bottom: 1px solid var(--text);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 6fr 1fr;
+
+    grid-template-areas:
+        "banner"
+        "links";
+}
+
+
+#header > banner { grid-area: banner; }
+#header > links { grid-area: links; }
+
+
+#header > #links > a {
+    color: var(--link);
+    text-align: center;
+    text-decoration: none;
+}

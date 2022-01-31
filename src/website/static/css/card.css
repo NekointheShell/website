@@ -1,0 +1,50 @@
+#feed > .card {
+    box-sizing: border-box;
+    border: 1px solid var(--text);
+
+    width: 100%;
+
+    overflow: hidden;
+    margin-bottom: 1em;
+    padding: 1em;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+
+    grid-template-areas:
+        "title  github"
+        "text   text"
+        ".      date";
+}
+
+
+#feed > .card * {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+
+#feed > .card > .title { grid-area: title; }
+
+
+#feed > .card > .github {
+    grid-area: github;
+    justify-self: end;
+}
+
+
+#feed > .card > .text { grid-area: text; }
+
+
+#feed > .card > .text > a { color: var(--link); }
+#feed > .card > .text > a:visited { color: var(--visited); }
+
+
+#feed > .card > .date {
+    grid-area: date;
+    justify-self: end;
+    align-self: end;
+}

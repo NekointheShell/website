@@ -1,0 +1,35 @@
+#content {
+    grid-area: content;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2em 4fr;
+
+    grid-template-areas:
+        "search"
+        "feed";
+}
+
+
+#search { grid-area: search; }
+
+
+#search > form > input {
+    box-sizing: border-box;
+    width: 100%;
+    color: var(--text);
+    background-color: var(--background);
+    border: none;
+}
+
+
+#search > form > input:focus {
+    outline: none;
+    border: 1px solid var(--text);
+}
+
+
+#feed {
+    grid-area: feed;
+    overflow-y: scroll;
+}

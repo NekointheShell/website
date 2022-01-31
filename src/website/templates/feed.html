@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <link rel='stylesheet' href='/static/css/feed.css'>
+    <script src='/static/js/search.js'></script>
+    <section id='content'>
+        <section id='search'>
+            <form>
+                <input name='input' type='text' placeholder='Search...' onkeyup='search(input.value)' onsubmit='true'>
+            </form>
+        </section>
+
+        <section id='feed'>
+            {{ feed|safe }}
+        </section>
+    </section>
+{% endblock %}

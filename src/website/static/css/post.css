@@ -1,0 +1,9 @@
+#content {
+    grid-area: content;
+    margin-top: 2em;
+    border: 1px solid var(--text);
+    width: 100%;
+}
+
+
+#content * { margin: 1em; }
