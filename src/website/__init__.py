@@ -65,3 +65,8 @@ def posts(page):
             return render_template('post.html', post=data)
 
     abort(404)
+
+
+@app.route('/posts/images/<image>')
+def posts_images(image):
+    return send_from_directory('posts/images', image, conditional = True)
