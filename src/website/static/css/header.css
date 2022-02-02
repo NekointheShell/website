@@ -15,8 +15,16 @@
 }
 
 
-#header > banner { grid-area: banner; }
-#header > links { grid-area: links; }
+#header > #banner { grid-area: banner; }
+
+
+#header > #banner > a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+
+#header > #links { grid-area: links; }
 
 
 #header > #links > a {
